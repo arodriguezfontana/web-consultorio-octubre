@@ -2,6 +2,7 @@
 import TopBar from './TopBar.astro';
 import NavLink from './ui/NavLink.astro';
 import ButtonCTA from './ui/ButtonCTA.astro';
+import { siteData } from '../data/siteData';
 
 const navItems = [
   { href: "/", label: "Espacio" },
@@ -12,7 +13,6 @@ const navItems = [
 ];
 ---
 
-<!-- Barra superior de contacto fija junto con el Nav -->
 <div class="sticky top-0 z-40">
   <TopBar />
   
@@ -22,10 +22,10 @@ const navItems = [
       <a href="/" class="flex items-center gap-3 text-left focus:outline-none group py-2">
         <div class="flex flex-col cursor-pointer">
           <span class="text-xl font-bold text-secondary tracking-tight leading-none group-hover:text-primary transition-colors">
-            Octubre
+            {siteData.name}
           </span>
           <span class="text-xs font-medium text-primary tracking-wide mt-0.5">
-            Consultorio Interdisciplinario
+            {siteData.subtitle}
           </span>
         </div>
       </a>

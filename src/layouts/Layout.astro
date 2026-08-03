@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { siteData } from '../data/siteData';
 
 interface Props {
   title: string;
@@ -11,11 +12,11 @@ interface Props {
 
 const { 
   title, 
-  description = "Octubre - Consultorio Interdisciplinario. Espacio de atención, acompañamiento y desarrollo integral en Psicología, Psicopedagogía y áreas afines.",
-  image = "/og-image.jpg" 
+  description = siteData.description,
+  image = siteData.seo.ogImage 
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://consultoriooctubre.com');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || siteData.seo.siteUrl);
 ---
 
 <!doctype html>
