@@ -1,0 +1,31 @@
+---
+interface Props {
+  href: string;
+  label: string;
+}
+
+const { href, label } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const isActive = currentPath === href || (href !== '/' && currentPath.startsWith(href));
+---
+
+<a
+  href={href}
+  class={`group relative flex items-center h-20 px-3.5 text-sm font-medium transition-colors duration-200 outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-t-lg select-none [-webkit-tap-highlight-color:transparent] ${
+    isActive
+      ? "text-primary font-semibold"
+      : "text-neutral-text hover:text-primary"
+  }`}
+  aria-current={isActive ? "page" : undefined}
+>
+  <span>{label}</span>
+
+  <span
+    class={`absolute bottom-0 left-0 right-0 h-[2.5px] bg-primary rounded-t-full transition-all duration-200 ease-out origin-center ${
+      isActive
+        ? "opacity-100 scale-x-100"
+        : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
+    }`}
+  ></span>
+</a>
