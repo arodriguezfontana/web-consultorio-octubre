@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
@@ -9,7 +11,7 @@ interface Props {
 
 const { 
   title, 
-  description = "Octubre - Consultorio Interdisciplinario. Espacio de atención, acompañamiento y desarrollo integral en Psicología, Psicopedagogía y áreas afines para niños, adolescentes y adultos.",
+  description = "Octubre - Consultorio Interdisciplinario. Espacio de atención, acompañamiento y desarrollo integral en Psicología, Psicopedagogía y áreas afines.",
   image = "/og-image.jpg" 
 } = Astro.props;
 
@@ -48,13 +50,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://consulto
       Saltar al contenido principal
     </a>
 
-    <slot name="header" />
+    <Navbar />
 
     <main id="contenido-principal" class="grow">
       <slot />
     </main>
 
-    <slot name="footer" />
+    <Footer />
 
   </body>
 </html>
