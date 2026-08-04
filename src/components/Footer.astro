@@ -5,25 +5,25 @@ import { siteData } from '../data/siteData';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-slate-900 text-slate-300 border-t border-slate-800">
+<footer class="bg-slate-900 text-slate-300">
   
-  <div class="bg-secondary/10 border-b border-slate-800 py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-      <div>
-        <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
-          ¿Querés coordinar una primera consulta?
+  <section class="bg-neutral-surface border-t border-slate-200/80 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="max-w-2xl mx-auto space-y-4">
+        <h2 class="text-2xl font-bold text-neutral-title">
+          ¿Querés coordinar tu primera entrevista?
         </h2>
-        <p class="text-slate-400 text-sm mt-1">
-          Estamos para acompañarte y responder las dudas sobre nuestro abordaje interdisciplinario.
+        <p class="text-neutral-text text-sm sm:text-base">
+          Escribinos por WhatsApp y coordinamos día y horario según la especialidad requerida.
         </p>
-      </div>
-      <div>
-        <ButtonCTA href={siteData.contact.whatsappUrl}>
-          Solicitar Turno
-        </ButtonCTA>
+        <div class="pt-2">
+          <ButtonCTA href={siteData.contact.whatsappUrl}>
+            Coordinar Turno por WhatsApp
+          </ButtonCTA>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start justify-between">
