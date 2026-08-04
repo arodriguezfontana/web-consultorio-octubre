@@ -16,7 +16,9 @@ const currentPath = Astro.url.pathname;
 ---
 
 <div class="sticky top-0 z-40">
-  <TopBar />
+  <div class="hidden md:block">
+    <TopBar />
+  </div>
   
   <header class="bg-neutral-surface/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
