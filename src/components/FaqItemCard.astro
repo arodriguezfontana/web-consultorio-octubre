@@ -1,0 +1,39 @@
+---
+import type { FaqItem } from '../data/faqData';
+
+interface Props {
+  faq: FaqItem;
+}
+
+const { faq } = Astro.props;
+---
+
+<div 
+  data-category={faq.category}
+  class="faq-item bg-neutral-surface rounded-2xl border border-slate-200/80 border-t-2 border-t-primary/60 overflow-hidden shadow-2xs transition-all duration-200"
+>
+  <button
+    type="button"
+    class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer select-none focus:outline-none"
+    aria-expanded="false"
+  >
+    <div class="space-y-1">
+      <span class="text-[11px] font-bold uppercase tracking-wider text-primary block">
+        {faq.category}
+      </span>
+      <span class="text-base sm:text-lg font-bold text-neutral-title leading-snug block">
+        {faq.question}
+      </span>
+    </div>
+    
+    <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shrink-0 text-slate-500 faq-icon transition-transform duration-300">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+      </svg>
+    </div>
+  </button>
+
+  <div class="faq-content hidden px-6 pb-6 pt-1 text-sm sm:text-base text-neutral-text leading-relaxed border-t border-slate-100/80 mt-1">
+    {faq.answer}
+  </div>
+</div>

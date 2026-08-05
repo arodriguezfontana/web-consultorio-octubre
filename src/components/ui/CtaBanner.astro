@@ -1,0 +1,34 @@
+---
+import ButtonCTA from './ButtonCTA.astro';
+import { siteData } from '../../data/siteData';
+
+interface Props {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+}
+
+const { 
+  title = "¿Tenés dudas o querés coordinar una consulta?",
+  description = "Escribinos directamente por WhatsApp y te orientamos sobre el mejor abordaje para tu caso.",
+  buttonText = "Consultar por WhatsApp"
+} = Astro.props;
+---
+
+<section class="bg-neutral-surface border-t border-slate-200/80 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-2xl mx-auto space-y-4">
+      <h2 class="text-2xl font-bold text-neutral-title">
+        {title}
+      </h2>
+      <p class="text-neutral-text text-sm sm:text-base">
+        {description}
+      </p>
+      <div class="pt-2">
+        <ButtonCTA href={siteData.contact.whatsappUrl}>
+          {buttonText}
+        </ButtonCTA>
+      </div>
+    </div>
+  </div>
+</section>
