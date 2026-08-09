@@ -14,17 +14,6 @@ const { service } = Astro.props;
   class={`bg-neutral-surface p-8 rounded-3xl border border-slate-200/80 border-t-4 ${service.borderColorClass} shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between`}
 >
   <div>
-    <div class="flex items-center justify-between gap-4 mb-4">
-      <span class="text-xs font-bold uppercase tracking-wider text-primary">
-        {service.subtitle}
-      </span>
-      {service.badge && (
-        <span class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-accent-light text-accent">
-          {service.badge}
-        </span>
-      )}
-    </div>
-
     <h2 class="text-2xl font-bold text-neutral-title mb-3">
       {service.title}
     </h2>

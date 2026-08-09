@@ -1,6 +1,6 @@
 export const siteData = {
-  name: "Octubre",
-  subtitle: "Consultorio Psicológico",
+  name: "Espacio Octubre",
+  subtitle: "Salud Mental Integral",
   description: "Un espacio de atención y acompañamiento en salud mental y desarrollo integral para niños, adolescentes y adultos.",
   
   contact: {

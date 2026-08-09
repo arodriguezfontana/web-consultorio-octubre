@@ -37,9 +37,6 @@ const { member } = Astro.props;
         <h2 class="text-xl font-bold text-neutral-title mt-0.5">
           {member.name}
         </h2>
-        <p class="text-xs font-medium text-slate-500 mt-0.5">
-          {member.specialty}
-        </p>
       </div>
 
       <p class="text-neutral-text text-sm leading-relaxed">
@@ -51,7 +48,7 @@ const { member } = Astro.props;
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
         <div>
-          <span class="font-semibold text-neutral-title block">Horarios de atención:</span>
+          <span class="font-semibold text-neutral-title block">Horarios</span>
           <span>{member.schedule}</span>
         </div>
       </div>

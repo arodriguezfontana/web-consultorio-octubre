@@ -1,29 +1,16 @@
 ---
 import ButtonCTA from './ui/ButtonCTA.astro';
 import { siteData } from '../data/siteData';
+import CtaBanner from './ui/CtaBanner.astro';
 
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-slate-900 text-slate-300">
-  
-  <section class="bg-neutral-surface border-t border-slate-200/80 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="max-w-2xl mx-auto space-y-4">
-        <h2 class="text-2xl font-bold text-neutral-title">
-          ¿Querés coordinar tu primera entrevista?
-        </h2>
-        <p class="text-neutral-text text-sm sm:text-base">
-          Escribinos por WhatsApp y coordinamos día y horario según la especialidad requerida.
-        </p>
-        <div class="pt-2">
-          <ButtonCTA href={siteData.contact.whatsappUrl}>
-            Coordinar Turno por WhatsApp
-          </ButtonCTA>
-        </div>
-      </div>
-    </div>
-  </section>
+  <CtaBanner 
+    title="¿Querés coordinar tu primera entrevista?"
+    description="Escribinos por WhatsApp y nuestro equipo te responderá a la brevedad."
+  />
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start justify-between">
@@ -48,7 +35,7 @@ const currentYear = new Date().getFullYear();
 
       <div class="md:justify-self-end max-w-md">
         <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-          Ubicación & Contacto
+          Información 
         </h3>
         <ul class="space-y-3 text-sm text-slate-400">
           <li class="flex items-start gap-3">
