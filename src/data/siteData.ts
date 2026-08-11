@@ -1,7 +1,7 @@
 export const siteData = {
   name: "Espacio Octubre",
   subtitle: "Salud Mental Integral",
-  description: "Un espacio de atención y acompañamiento en salud mental y desarrollo integral para niños, adolescentes y adultos.",
+  description: "Un espacio de escucha, acompañamiento y transformación. Atención especializada para niños, adolescentes y adultos.",
   
   contact: {
     phone: "+54 9 11 1234-5678",

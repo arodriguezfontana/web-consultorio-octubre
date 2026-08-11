@@ -14,8 +14,8 @@ export const teamData: TeamMember[] = [
     name: "Marina Cruz",
     role: "Lic. en Psicología",
     schedule: "Lunes y Miércoles: 14:00 a 19:00 hs",
-    bio: "Especialista en desarrollo infantil y orientación a padres. Amplia trayectoria en abordajes emocionales y vínculos familiares.",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
+    bio: "Especialista en consumos problematicos. Evaluación y atención individual y a parejas.",
+    image: "./assets/marina-cruz.jpeg",
     badge: "Presencial & Virtual"
   },
   {
