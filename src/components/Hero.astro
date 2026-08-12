@@ -5,7 +5,7 @@ import { siteData } from '../data/siteData';
 
 <section class="relative w-full h-[80vh] min-h-125 max-h-187.5 bg-slate-900 overflow-hidden">
   <img 
-    src="https://i.pinimg.com/originals/aa/e4/9f/aae49f60ab0295df8ed779bd7faf17c6.jpg" 
+    src="./../../public/assets/consultorio-2.png" 
     alt="Instalaciones del consultorio Octubre" 
     class="w-full h-full object-cover object-center opacity-85"
     loading="eager"
@@ -19,11 +19,11 @@ import { siteData } from '../data/siteData';
           Atención presencial y virtual
         </div>
         <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
-          Un espacio de escucha, acompañamiento y transformación.
+          {siteData.name}
         </h1>
 
         <p class="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl">
-          Atención especializada para niños, adolescentes y adultos. 
+          {siteData.description}
         </p>
 
         <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
