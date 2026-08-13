@@ -64,17 +64,7 @@ const currentYear = new Date().getFullYear();
 
           <li class="flex items-center gap-3">
             <Icon name="clock" class="w-5 h-5 text-secondary-light shrink-0" />
-            <span>{siteData.contact.hours}</span>
-          </li>
-          
-          <li class="flex items-center gap-3">
-            <Icon name="email" class="w-5 h-5 text-secondary-light shrink-0" />
-            <a 
-              href={`mailto:${siteData.contact.email}`} 
-              class="hover:text-white transition-colors underline-offset-4 hover:underline"
-            >
-              {siteData.contact.email}
-            </a>
+            <span>{siteData.contact.hours} / {siteData.contact.hourswe}</span>
           </li>
 
           <li class="flex items-center gap-3">
@@ -83,11 +73,24 @@ const currentYear = new Date().getFullYear();
               href={siteData.contact.whatsappUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              class="hover:text-white transition-colors font-medium underline-offset-4 hover:underline"
+              class="hover:text-white transition-colors font-medium"
             >
               {siteData.contact.phoneDisplay}
             </a>
           </li>
+
+          <li class="flex items-center gap-3">
+            <Icon name="instagram" class="w-5 h-5 text-secondary-light shrink-0" />
+            <a 
+              href={siteData.social.instagram} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="hover:text-white transition-colors font-medium"
+            >
+              @espaciooctubre
+            </a>
+          </li>
+
         </ul>
       </div>
 
@@ -97,7 +100,6 @@ const currentYear = new Date().getFullYear();
   <div class="py-6 text-xs text-slate-400">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
       <p>© {currentYear} {siteData.name}. Todos los derechos reservados.</p>
-      <p class="text-slate-500">{siteData.location.city}, Provincia de Buenos Aires</p>
     </div>
   </div>
 

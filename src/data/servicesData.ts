@@ -19,5 +19,4 @@ export const servicesData: ServiceItem[] = [
     ],
     borderColorClass: "border-t-primary"
   },
-
 ];

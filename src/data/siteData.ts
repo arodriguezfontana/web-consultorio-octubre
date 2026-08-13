@@ -21,7 +21,7 @@ export const siteData = {
       latitude: "-34.7067388",
       longitude: "-58.2850108"
     },
-    embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.361491768403!2d-58.2875857!3d-34.7067388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a33200debf62fb%3A0xce566cc36da33be3!2sConstituci%C3%B3n%2025%2C%20B1876AKF%20Bernal%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar"
+    embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.641860085459!2d-58.285010799999995!3d-34.706738800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a333d2d8f1d3c7%3A0xe0e959e5997d7c3b!2sEspacio%20Octubre!5e1!3m2!1ses-419!2sar!4v1786642493235!5m2!1ses-419!2sar"
   },
 
   contact: {
@@ -29,7 +29,8 @@ export const siteData = {
     phoneDisplay: "+54 9 11 3198-2012",
     whatsappUrl: "https://wa.me/5491131982012?text=Hola!%20Quisiera%20consultar%20por%20un%20turno%20de%20psicología%20en%20Espacio%20Octubre.",
     email: "contacto@consultoriooctubre.com",
-    hours: "Lun a Vie: 08:00 - 20:00 hs / Sab: 9:00 - 18:00 hs",
+    hours: "Lun a Vie: 8 a 20 hs",
+    hourswe: "Sab: 9 a 18 hs",
     modality: "Atención presencial y virtual"
   },
 

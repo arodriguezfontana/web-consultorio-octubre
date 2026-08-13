@@ -7,62 +7,49 @@ import { siteData } from '../data/siteData';
 ---
 
 <Layout 
-  title="Contacto & Ubicación | Octubre Consultorio"
-  description="Canales directos de atención en Octubre Consultorio Interdisciplinario. Escribinos por WhatsApp, Instagram, correo electrónico o visítanos en Bernal."
+    title="Espacio Octubre | Contacto"
+  description="Canales de atención en Espacio Octubre. Escribinos por WhatsApp, Instagram, correo electrónico o visítanos en Bernal."
 >
 
   <PageHeader 
-    badge="Contacto Directo"
-    title="Canales de Atención & Ubicación"
-    description="Comunícate directamente con nuestro equipo para coordinar entrevistas, solicitar información sobre especialidades o consultar horarios."
+    badge="Contacto"
+    title="Canales de Atención"
   />
 
   <section class="py-10 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         
         <ContactCard 
           title="WhatsApp"
-          description="Atención inmediata y coordinación de turnos."
           value={siteData.contact.phoneDisplay}
           href={siteData.contact.whatsappUrl}
           icon="whatsapp"
-          borderColor="border-t-accent"
+          borderColor="border-t-primary"
         />
 
         <ContactCard 
           title="Ubicación"
-          description="Consultorio presencial en Bernal."
           value={`${siteData.location.address}, ${siteData.location.city}`}
           icon="location"
           borderColor="border-t-primary"
         />
 
         <ContactCard 
-          title="Correo Electrónico"
-          description="Para consultas institucionales o informes."
-          value={siteData.contact.email}
-          href={`mailto:${siteData.contact.email}`}
-          icon="email"
-          borderColor="border-t-secondary"
-        />
-
-        <ContactCard 
           title="Horarios de Atención"
-          description={siteData.contact.modality}
           value={siteData.contact.hours}
+          value2={siteData.contact.hourswe}
           icon="clock"
           borderColor="border-t-primary"
         />
 
         <ContactCard 
           title="Instagram"
-          description="Novedades, artículos y contenido del espacio."
           value="@espaciooctubre"
           href={siteData.social.instagram}
           icon="instagram"
-          borderColor="border-t-secondary"
+          borderColor="border-t-primary"
         />
 
       </div>

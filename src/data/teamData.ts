@@ -14,7 +14,7 @@ export const teamData: TeamMember[] = [
     id: "pro-1",
     name: "Marina Cruz",
     role: "Lic. en Psicología",
-    schedule: "Lunes y Miércoles: 14:00 a 19:00 hs",
+    schedule: "Lun y Mié: 14 a 19 hs",
     image: "/assets/marina-cruz.jpeg",
     badge: "Presencial & Virtual",
     topics: [
@@ -27,7 +27,7 @@ export const teamData: TeamMember[] = [
     id: "pro-3",
     name: "Natalia Machetti",
     role: "Lic. en Psicología",
-    schedule: "Viernes: 08:00 a 16:00 hs",
+    schedule: "Vie: 8 a 16 hs",
     image: "/assets/natalia-machetti.jpeg",
     badge: "Presencial & Virtual",
     topics: [
