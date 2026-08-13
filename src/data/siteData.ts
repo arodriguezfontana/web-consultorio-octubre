@@ -1,26 +1,54 @@
 export const siteData = {
   name: "Espacio Octubre",
-  subtitle: "Salud Mental Integral",
-  description: "Un espacio de escucha, acompañamiento y transformación. Atención especializada para niños, adolescentes y adultos.",
+  legalName: "Octubre Consultorio Interdisciplinario",
+  subtitle: "Salud Mental & Desarrollo Integral",
+  description: "Un espacio de escucha, acompañamiento y transformación. Atención interdisciplinaria especializada para niños, adolescentes y adultos en Bernal.",
   
+  seo: {
+    siteUrl: "https://consultoriooctubre.com",
+    ogImage: "/og-image.jpg",
+    twitterHandle: "@espaciooctubre",
+    keywords: ["consultorio interdisciplinario", "psicologia bernal", "psicopedagogia quilmes", "fonoaudiologia", "salud mental", "terapia infantil"]
+  },
+
+  location: {
+    address: "Constitución 25",
+    city: "Bernal",
+    state: "Provincia de Buenos Aires",
+    zipCode: "B1876",
+    country: "AR",
+    geo: {
+      latitude: "-34.7067388",
+      longitude: "-58.2850108"
+    },
+    embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.361491768403!2d-58.2875857!3d-34.7067388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a33200debf62fb%3A0xce566cc36da33be3!2sConstituci%C3%B3n%2025%2C%20B1876AKF%20Bernal%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar"
+  },
+
   contact: {
-    phone: "+54 9 11 1234-5678",
+    phone: "+5491112345678",
     phoneDisplay: "+54 9 11 1234-5678",
     whatsappUrl: "https://wa.me/5491112345678?text=Hola!%20Quisiera%20consultar%20por%20un%20turno%20en%20Octubre.",
     email: "contacto@consultoriooctubre.com",
-    address: "Constitución 25, Bernal",
-    hours: "Lun a Vie: 08:00 - 20:00 hs",
-    modality: "Atención presencial y virtual",
-    mapUrl: "https://www.google.com/maps/place/Espacio+Octubre/@-34.7067388,-58.2875857,810m/data=!3m1!1e3!4m15!1m8!3m7!1s0x95a33200debf62fb:0xce566cc36da33be3!2sConstituci%C3%B3n+25,+B1876AKF+Bernal,+Provincia+de+Buenos+Aires!3b1!8m2!3d-34.7067388!4d-58.2850108!16s%2Fg%2F11zdjkyq1_!3m5!1s0x95a333d2d8f1d3c7:0xe0e959e5997d7c3b!8m2!3d-34.7067388!4d-58.2850108!16s%2Fg%2F11zd8497gq?entry=ttu&g_ep=EgoyMDI2MDgwOS4wIKXMDSoASAFQAw%3D%3Dhttps://www.google.com/maps/place/Constituci%C3%B3n+25,+B1876AKF+Bernal,+Provincia+de+Buenos+Aires/@-34.7065449,-58.2859347,236m/data=!3m1!1e3!4m6!3m5!1s0x95a33200debf62fb:0xce566cc36da33be3!8m2!3d-34.7067388!4d-58.2850108!16s%2Fg%2F11zdjkyq1_?entry=ttu&g_ep=EgoyMDI2MDgwOS4wIKXMDSoASAFQAw%3D%3D"
+    hours: "Lunes a Viernes: 08:00 - 20:00 hs",
+    modality: "Atención presencial y virtual"
   },
 
   social: {
     instagram: "",
-    facebook: ""
+    facebook: "",
+    linkedin: "",
+    twitter: "", 
+    tiktok: "",
+    youtube: ""
   },
 
-  seo: {
-    siteUrl: "https://consultoriooctubre.com",
-    ogImage: "/og-image.jpg"
-  }
+  specialties: [
+    "Psicología Infanto-Juvenil y Adultos",
+    "Psicopedagogía",
+    "Fonoaudiología",
+    "Terapia Ocupacional",
+    "Evaluación Interdisciplinaria"
+  ]
 } as const;
+
+export type SiteData = typeof siteData;

@@ -3,16 +3,8 @@ import TopBar from './TopBar.astro';
 import NavLink from './ui/NavLink.astro';
 import ButtonCTA from './ui/ButtonCTA.astro';
 import { siteData } from '../data/siteData';
-
-const navItems = [
-  { href: "/", label: "Espacio" },
-  { href: "/servicios", label: "Servicios" },
-  { href: "/profesionales", label: "Equipo" },
-  { href: "/faq", label: "Preguntas Frecuentes" },
-  { href: "/contacto", label: "Contacto" },
-];
-
-const currentPath = Astro.url.pathname;
+import { navItems } from '../data/navigationData';
+import logo from '../../public/assets/logo.png';
 ---
 
 <div class="sticky top-0 z-40">
@@ -23,9 +15,8 @@ const currentPath = Astro.url.pathname;
   <header class="bg-neutral-surface/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      
       <a href="/" class="flex items-center gap-3 text-left focus:outline-none group py-2">
-        <img src='../assets/logo.png' alt="Logo" class="h-11 pr-2 w-auto" />
+        <img src={logo.src} alt={`Logo de ${siteData.name}`} class="h-11 w-auto shrink-0 pr-1" />
         <div class="flex flex-col cursor-pointer">
           <span class="text-xl font-bold text-primary tracking-tight leading-none transition-colors">
             {siteData.name}
@@ -36,7 +27,7 @@ const currentPath = Astro.url.pathname;
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-2 h-full" aria-label="Navegación principal">
+      <nav class="hidden md:flex items-center gap-1 h-full" aria-label="Navegación principal">
         {navItems.map((item) => (
           <NavLink href={item.href} label={item.label} />
         ))}
@@ -49,7 +40,7 @@ const currentPath = Astro.url.pathname;
       <button
         id="mobile-menu-btn"
         type="button"
-        class="md:hidden inline-flex items-center justify-center p-2 rounded-xl text-neutral-text hover:text-secondary hover:bg-slate-100 focus:outline-none transition-colors select-none [-webkit-tap-highlight-color:transparent]"
+        class="md:hidden cursor-pointer inline-flex items-center justify-center p-2 rounded-xl text-neutral-text hover:text-secondary focus:outline-none transition-colors select-none [-webkit-tap-highlight-color:transparent]"
         aria-controls="mobile-menu"
         aria-expanded="false"
         aria-label="Abrir menú de navegación"
@@ -68,22 +59,10 @@ const currentPath = Astro.url.pathname;
       id="mobile-menu"
       class="hidden md:hidden border-t border-slate-200/80 bg-neutral-surface/98 backdrop-blur-md px-4 pt-3 pb-6 space-y-4 shadow-lg transition-all duration-200"
     >
-      <nav class="flex flex-col space-y-1">
-        {navItems.map((item) => {
-          const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
-          return (
-            <a
-              href={item.href}
-              class={`px-4 py-2.5 rounded-xl text-base font-medium transition-colors ${
-                isActive
-                  ? "bg-primary-light text-secondary font-semibold"
-                  : "text-neutral-text hover:text-secondary hover:bg-slate-100"
-              }`}
-            >
-              {item.label}
-            </a>
-          );
-        })}
+      <nav class="flex flex-col space-y-1" aria-label="Navegación móvil">
+        {navItems.map((item) => (
+          <NavLink href={item.href} label={item.label} isMobile={true} />
+        ))}
       </nav>
 
       <div class="pt-2 border-t border-slate-100">

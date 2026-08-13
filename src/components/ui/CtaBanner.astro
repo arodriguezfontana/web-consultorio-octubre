@@ -6,25 +6,34 @@ interface Props {
   title?: string;
   description?: string;
   buttonText?: string;
+  variant?: 'light' | 'dark';
 }
 
 const { 
   title = "¿Tenés dudas o querés coordinar una consulta?",
   description = "Escribinos directamente por WhatsApp y te orientamos sobre el mejor abordaje para tu caso.",
-  buttonText = "Realizar Consulta"
+  buttonText = "Realizar Consulta",
+  variant = 'light'
 } = Astro.props;
+
+const isDark = variant === 'dark';
 ---
 
-<section class="bg-neutral-surface border-t border-slate-200/80 py-12">
+<section 
+  class={isDark 
+    ? "bg-primary-dark/80 border-t border-white/10 py-12 text-slate-200" 
+    : "bg-neutral-surface border-t border-slate-200/80 py-12 text-neutral-text"
+  }
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <div class="max-w-2xl mx-auto space-y-4">
-      <h2 class="text-2xl font-bold text-neutral-title">
+      <h2 class={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-white" : "text-neutral-title"}`}>
         {title}
       </h2>
-      <p class="text-neutral-text text-sm sm:text-base">
+      <p class="text-sm sm:text-base leading-relaxed">
         {description}
       </p>
-      <div class="pt-2">
+      <div class="pt-2 flex justify-center">
         <ButtonCTA href={siteData.contact.whatsappUrl}>
           {buttonText}
         </ButtonCTA>

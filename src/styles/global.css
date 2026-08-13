@@ -1,28 +1,39 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-extra-light: #f6f7f5;
-  --color-primary-light: #eef0ec;
+  --color-primary-extra-light: #f4f6f3;
+  --color-primary-light: #e4e8e0;
   --color-primary: #76806a;
   --color-primary-hover: #5d6653;
-  --color-primary-dark: #454c3e;
+  --color-primary-dark: #434a3b;
 
-  --color-secondary-extra-light: #faf7f3;
-  --color-secondary-light: #f7f2eb;
-  --color-secondary: #9e865e;
-  --color-secondary-hover: #cfb89c;
-  --color-secondary-dark: #8c7353;
+  --color-secondary-extra-light: #faf5f0;
+  --color-secondary-light: #f2e4d5;
+  --color-secondary: #b88662;
+  --color-secondary-hover: #9e6f4d;
+  --color-secondary-dark: #7a5235;
 
-  --color-accent-extra-light: #faf7f3;
-  --color-accent-light: #f7f2eb;
-  --color-accent: #9e865e;
-  --color-accent-hover: #cfb89c;
-  --color-accent-dark: #8c7353;
+  --color-accent-extra-light: #fcf9f2;
+  --color-accent-light: #f7edd8;
+  --color-accent: #cfab68;
+  --color-accent-hover: #b8924f;
+  --color-accent-dark: #87672e;
 
   --color-neutral-bg: #f8fafc;
   --color-neutral-surface: #ffffff;
-  --color-neutral-text: #334155;
+  --color-neutral-text: #475569;
   --color-neutral-title: #0f172a;
 
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  font-family: var(--font-sans);
+  color: var(--color-neutral-text);
+  background-color: var(--color-neutral-bg);
+}
+
+::selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
 }
