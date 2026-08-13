@@ -1,79 +1,45 @@
 ---
-interface GalleryImage {
-  src: string;
-  alt: string;
-  title: string;
-}
-
-const galleryImages: GalleryImage[] = [
-  {
-    src: "/assets/consultorio-1.png",
-    alt: "Consultorio Adolecentes y Adultos",
-    title: "Consultorio Adolecentes y Adultos",
-  },
-  {
-    src: "/assets/consultorio-2.png",
-    alt: "Consultorio Niños",
-    title: "Consultorio Niños",
-  },
-  {
-    src: "/assets/consultorio-3.png",
-    alt: "Sala de Espera",
-    title: "Sala de Espera",
-  },
-  {
-    src: "/assets/consultorio-4.png",
-    alt: "Acceso Planta Alta",
-    title: "Acceso Planta Alta",
-  },
-];
+import { galleryImages } from '../data/galleryData';
 
 const doubleImages = [...galleryImages, ...galleryImages];
 ---
 
 <section class="py-16 md:py-24 bg-neutral-bg overflow-hidden select-none">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-    <h2
-      class="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-title tracking-tight"
-    >
-      Conoce Nuestros Consultorio
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-title tracking-tight">
+      Nuestros Consultorios
     </h2>
   </div>
 
   <div class="relative w-full overflow-hidden py-4 group">
-    <div
-      class="absolute top-0 bottom-0 left-0 w-12 sm:w-24 bg-linear-to-r from-neutral-bg to-transparent opacity-60 z-10 pointer-events-none"
-    >
-    </div>
-    <div
-      class="absolute top-0 bottom-0 right-0 w-12 sm:w-24 bg-linear-to-l from-neutral-bg to-transparent opacity-60 z-10 pointer-events-none"
-    >
-    </div>
+    <div class="absolute top-0 bottom-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-neutral-bg to-transparent opacity-60 z-10 pointer-events-none"></div>
+    <div class="absolute top-0 bottom-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-neutral-bg to-transparent opacity-60 z-10 pointer-events-none"></div>
 
-    <div
-      class="flex gap-6 w-max animate-infinite-scroll group-hover:[animation-play-state:paused]"
-    >
-      {
-        doubleImages.map((img) => (
-          <div class="w-70 sm:w-95 lg:w-105 shrink-0">
-            <div class="relative overflow-hidden bg-neutral-surface border border-slate-100/20 shadow-xs h-80 sm:h-100">
-              <img
-                src={img.src}
-                alt={img.alt}
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/20 to-transparent flex items-end p-6">
-                <div class="text-white">
-                  <h3 class="text-base sm:text-lg font-bold leading-tight">
-                    {img.title}
-                  </h3>
-                </div>
+    <div class="flex gap-6 w-max animate-infinite-scroll group-hover:[animation-play-state:paused]">
+      {doubleImages.map((img) => (
+        <div class="w-70 sm:w-95 lg:w-105 shrink-0">
+          <div class="relative overflow-hidden bg-neutral-surface border border-slate-200/80 shadow-xs h-80 sm:h-100 group/card">
+            <img
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500 ease-out"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex items-end p-6">
+              <div class="text-white">
+                {img.subtitle && (
+                  <span class="text-xs font-medium text-primary-light block mb-0.5">
+                    {img.subtitle}
+                  </span>
+                )}
+                <h3 class="text-base sm:text-lg font-bold leading-tight">
+                  {img.title}
+                </h3>
               </div>
             </div>
           </div>
-        ))
-      }
+        </div>
+      ))}
     </div>
   </div>
 </section>

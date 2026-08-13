@@ -2,98 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/ui/PageHeader.astro';
 import FaqItemCard from '../components/FaqItemCard.astro';
-import { faqData, faqCategories } from '../data/faqData';
+import { faqData } from '../data/faqData';
 ---
 
 <Layout 
   title="Preguntas Frecuentes | Octubre Consultorio"
   description="Resolvemos tus dudas sobre solicitud de turnos, modalidades presencial y virtual, obras sociales, reintegros y primera consulta en Octubre."
 >
-
   <PageHeader 
-    badge="Centro de Ayuda & Respuestas"
+    badge="Resolvemos tus dudas"
     title="Preguntas Frecuentes"
-    description="Todo lo que necesitás saber antes de tu primera consulta. Queremos acompañarte con claridad desde el primer contacto."
+    description="Resolvemos tus dudas sobre solicitud de turnos, modalidades presencial y virtual, obras sociales, reintegros y primera consulta en Octubre."
   />
-
-  <section class="py-12 sm:py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-wrap items-center justify-center gap-2 mb-10" id="category-filters">
-        {faqCategories.map((cat, index) => (
-          <button
-            type="button"
-            data-category={cat}
-            class={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
-              index === 0
-                ? "bg-secondary text-white shadow-xs filter-btn-active"
-                : "bg-neutral-surface text-neutral-text hover:bg-slate-100 border border-slate-200/80"
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      <div class="space-y-4" id="faq-accordion">
+  <section class="py-10 sm:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-3">
         {faqData.map((faq) => (
           <FaqItemCard faq={faq} />
         ))}
       </div>
-
     </div>
   </section>
 
 </Layout>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const faqItems = document.querySelectorAll<HTMLElement>('.faq-item');
-    const filterBtns = document.querySelectorAll<HTMLButtonElement>('#category-filters button');
-
-    faqItems.forEach((item) => {
-      const toggleBtn = item.querySelector('.faq-toggle');
-      const content = item.querySelector('.faq-content');
-      const icon = item.querySelector('.faq-icon');
-
-      toggleBtn?.addEventListener('click', () => {
-        const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-
-        faqItems.forEach((other) => {
-          if (other !== item) {
-            other.querySelector('.faq-toggle')?.setAttribute('aria-expanded', 'false');
-            other.querySelector('.faq-content')?.classList.add('hidden');
-            other.querySelector('.faq-icon')?.classList.remove('rotate-45');
-          }
-        });
-
-        toggleBtn.setAttribute('aria-expanded', (!isExpanded).toString());
-        content?.classList.toggle('hidden');
-        icon?.classList.toggle('rotate-45');
-      });
-    });
-
-    filterBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const category = btn.getAttribute('data-category');
-
-        filterBtns.forEach((b) => {
-          b.classList.remove('bg-secondary', 'text-white', 'shadow-xs', 'filter-btn-active');
-          b.classList.add('bg-neutral-surface', 'text-neutral-text', 'border', 'border-slate-200/80');
-        });
-
-        btn.classList.add('bg-secondary', 'text-white', 'shadow-xs', 'filter-btn-active');
-        btn.classList.remove('bg-neutral-surface', 'text-neutral-text', 'border', 'border-slate-200/80');
-
-        faqItems.forEach((item) => {
-          const itemCategory = item.getAttribute('data-category');
-          if (category === 'Todas' || itemCategory === category) {
-            item.classList.remove('hidden');
-          } else {
-            item.classList.add('hidden');
-          }
-        });
-      });
-    });
-  });
-</script>

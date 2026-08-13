@@ -11,7 +11,7 @@ export const servicesData: ServiceItem[] = [
   {
     id: "psicologia",
     title: "Psicología",
-    description: "Espacio de escucha y acompañamiento terapéutico orientado a alojar las distintas problemáticas emocionales, vinculares y del desarrollo en cada etapa de la vida.",
+    description: "Espacio de escucha y acompañamiento terapéutico.",
     items: [
       "Psicoterapia orientada a niños, adolescentes y adultos",
       "Orientación a familias",
@@ -19,4 +19,5 @@ export const servicesData: ServiceItem[] = [
     ],
     borderColorClass: "border-t-primary"
   },
+
 ];

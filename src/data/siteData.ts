@@ -1,14 +1,14 @@
 export const siteData = {
   name: "Espacio Octubre",
-  legalName: "Octubre Consultorio Interdisciplinario",
-  subtitle: "Salud Mental & Desarrollo Integral",
-  description: "Un espacio de escucha, acompañamiento y transformación. Atención interdisciplinaria especializada para niños, adolescentes y adultos en Bernal.",
+  legalName: "Espacio Octubre",
+  subtitle: "Salud Mental Integral",
+  description: "Un espacio de escucha, acompañamiento y transformación. Atención especializada para niños, adolescentes y adultos.",
   
   seo: {
     siteUrl: "https://consultoriooctubre.com",
     ogImage: "/og-image.jpg",
     twitterHandle: "@espaciooctubre",
-    keywords: ["consultorio interdisciplinario", "psicologia bernal", "psicopedagogia quilmes", "fonoaudiologia", "salud mental", "terapia infantil"]
+    keywords: ["consultorio integral", "psicologia bernal", "psicologia virtual", "terapia adultos", "salud mental", "terapia infantil"]
   },
 
   location: {
@@ -25,30 +25,22 @@ export const siteData = {
   },
 
   contact: {
-    phone: "+5491112345678",
-    phoneDisplay: "+54 9 11 1234-5678",
-    whatsappUrl: "https://wa.me/5491112345678?text=Hola!%20Quisiera%20consultar%20por%20un%20turno%20en%20Octubre.",
+    phone: "+5491131982012",
+    phoneDisplay: "+54 9 11 3198-2012",
+    whatsappUrl: "https://wa.me/5491131982012?text=Hola!%20Quisiera%20consultar%20por%20un%20turno%20de%20psicología%20en%20Espacio%20Octubre.",
     email: "contacto@consultoriooctubre.com",
-    hours: "Lunes a Viernes: 08:00 - 20:00 hs",
+    hours: "Lun a Vie: 08:00 - 20:00 hs / Sab: 9:00 - 18:00 hs",
     modality: "Atención presencial y virtual"
   },
 
   social: {
-    instagram: "",
+    instagram: "https://www.instagram.com/espacio.octubre/",
     facebook: "",
     linkedin: "",
     twitter: "", 
     tiktok: "",
     youtube: ""
-  },
-
-  specialties: [
-    "Psicología Infanto-Juvenil y Adultos",
-    "Psicopedagogía",
-    "Fonoaudiología",
-    "Terapia Ocupacional",
-    "Evaluación Interdisciplinaria"
-  ]
+  }
 } as const;
 
 export type SiteData = typeof siteData;

@@ -1,23 +1,29 @@
 ---
 interface Props {
-  badge: string;
+  badge?: string;
   title: string;
-  description: string;
+  description?: string;
 }
 
 const { badge, title, description } = Astro.props;
 ---
 
-<section class="bg-neutral-surface border-b border-slate-200/80 py-12 sm:py-16">
-  <div class="mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary-light text-secondary border border-primary/20 mb-4">
-      {badge}
-    </span>
-    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-title tracking-tight mb-4">
+<section class="bg-neutral-surface border-b border-slate-200/80 py-6 sm:py-8">
+  <div class="mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-2xl">
+    {badge && (
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-secondary-light text-secondary border border-secondary/20 mb-2">
+        {badge}
+      </span>
+    )}
+    
+    <h1 class="text-2xl sm:text-3xl font-bold text-neutral-title tracking-tight mb-2">
       {title}
     </h1>
-    <p class="text-neutral-text text-base sm:text-lg leading-relaxed">
-      {description}
-    </p>
+    
+    {description && (
+      <p class="text-neutral-text text-xs sm:text-sm leading-relaxed max-w-xl mx-auto">
+        {description}
+      </p>
+    )}
   </div>
 </section>

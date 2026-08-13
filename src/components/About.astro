@@ -1,98 +1,60 @@
 ---
-
+import { siteData } from '../data/siteData';
+import { aboutData } from '../data/aboutData';
+import Icon from './ui/Icon.astro';
 ---
 
 <section class="py-16 md:py-24 bg-neutral-surface border-b border-slate-200/80">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      
       <div class="space-y-6">
-        <h2
-          class="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-title tracking-tight"
-        >
-          Nuestra Historia
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-title tracking-tight">
+          {aboutData.title}
         </h2>
 
         <p class="text-neutral-text leading-relaxed">
-          En <span class="font-semibold text-secondary">julio de 2026</span>, un
-          equipo de profesionales con amplia trayectoria en clínicas e
-          instituciones educativas decidió unirse para crear un espacio propio.
+          En <span class="font-semibold text-secondary">{aboutData.foundingDate}</span>, un equipo de profesionales con amplia trayectoria en clínicas e instituciones educativas decidió unirse para crear un espacio propio.
         </p>
 
         <p class="text-neutral-text leading-relaxed">
-          Unimos nuestra experiencia para ofrecer un abordaje integral,
-          caracterizado por la calidez humana, el trabajo coordinado y el
-          acompañamiento personalizado a cada familia.
+          {aboutData.paragraphs[1]}
         </p>
 
         <div class="pt-2 flex flex-wrap gap-4">
-          <div
-            class="flex items-center gap-2 text-sm text-neutral-title font-medium"
-          >
-            <svg
-              class="w-5 h-5 text-accent shrink-0"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <span>Atención Presencial y Virtual</span>
+          <div class="flex items-center gap-2 text-sm text-neutral-title font-medium">
+            <Icon name="check" class="w-5 h-5 text-accent shrink-0" />
+            <span>{siteData.contact.modality}</span>
           </div>
         </div>
       </div>
 
-      <div
-        class="bg-neutral-bg p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-xs relative overflow-hidden"
-      >
-        <div
-          class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl pointer-events-none"
-        >
-        </div>
+      <div class="p-8 sm:p-10 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
 
         <h3 class="text-lg font-bold text-neutral-title mb-6">
-          Nuestra Trayectoria
+          {aboutData.highlightsTitle}
         </h3>
 
         <div class="space-y-6">
-          <div class="flex items-start gap-4">
-            <div
-              class="p-3 bg-secondary-light text-secondary rounded-2xl shrink-0 font-bold text-xl"
-            >
-              +250
+          {aboutData.highlights.map((item) => (
+            <div class="flex items-start gap-4">
+              <div class="p-3 bg-secondary-light text-secondary rounded-2xl shrink-0 font-bold text-xl min-w-[70px] text-center">
+                {item.number}
+              </div>
+              <div>
+                <h4 class="font-semibold text-neutral-title text-sm">
+                  {item.title}
+                </h4>
+                <p class="text-xs text-neutral-text mt-0.5 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 class="font-semibold text-neutral-title text-sm">
-                Pacientes acompañados
-              </h4>
-              <p class="text-xs text-neutral-text mt-0.5">
-                Experiencia previa acumulada en la atención de niños,
-                adolecentes y adultos.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-4">
-            <div
-              class="p-3 bg-secondary-light text-secondary rounded-2xl shrink-0 font-bold text-xl"
-            >
-              100%
-            </div>
-            <div>
-              <h4 class="font-semibold text-neutral-title text-sm">
-                Compromiso profesional
-              </h4>
-              <p class="text-xs text-neutral-text mt-0.5">
-                Formación continua, supervisión de casos y actualización
-                constante.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
+
     </div>
   </div>
 </section>

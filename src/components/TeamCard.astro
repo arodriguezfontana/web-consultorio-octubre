@@ -1,35 +1,43 @@
 ---
 import type { TeamMember } from '../data/teamData';
 import { siteData } from '../data/siteData';
+import Icon from './ui/Icon.astro';
 
 interface Props {
   member: TeamMember;
 }
 
 const { member } = Astro.props;
+
+const customWhatsappUrl = `https://wa.me/${siteData.contact.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hola! Quisiera consultar por un turno con ${member.name}.`)}`;
 ---
 
-<div class="bg-neutral-surface rounded-3xl border border-slate-200/80 border-t-4 border-t-primary shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+<div class="bg-neutral-surface rounded-3xl border border-slate-200/80 border-t-4 border-t-primary shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between group h-full">
+  
   <div>
-    <div class="relative h-80 w-full bg-slate-100 overflow-hidden">
+    <div class="relative w-full h-70 aspect-square bg-slate-100 overflow-hidden shrink-0">
       <img 
         src={member.image} 
         alt={`Foto de ${member.name}`}
         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         loading="lazy"
       />
-      <div class="absolute inset-0 bg-linear-to-t from-slate-950/60 via-transparent to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
       
       {member.badge && (
-        <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold bg-neutral-surface/90 backdrop-blur-md text-secondary border border-slate-200 shadow-xs">
+        <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold bg-neutral-surface/90 backdrop-blur-md text-secondary border border-slate-200 shadow-xs z-10">
           {member.badge}
         </span>
       )}
 
-
+      {member.license && (
+        <span class="absolute bottom-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-neutral-title backdrop-blur-xs border border-white/20 z-10">
+          {member.license}
+        </span>
+      )}
     </div>
 
-    <div class="p-6 space-y-4">
+    <div class="p-6 space-y-2">
       <div>
         <span class="text-xs font-bold uppercase tracking-wider text-primary">
           {member.role}
@@ -39,32 +47,45 @@ const { member } = Astro.props;
         </h2>
       </div>
 
-      <p class="text-neutral-text text-sm leading-relaxed">
-        {member.bio}
-      </p>
-
-      <div class="pt-3 border-t border-slate-100 flex items-start gap-2 text-xs text-slate-600 bg-slate-50 p-3 rounded-xl">
-        <svg class="w-4 h-4 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <div>
-          <span class="font-semibold text-neutral-title block">Horarios</span>
-          <span>{member.schedule}</span>
+      {member.topics && member.topics.length > 0 && (
+        <div class="border-t border-slate-100 pt-3">
+          <h3 class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2">
+            Areas de intervención
+          </h3>
+          <ul class="space-y-1.5 text-xs text-neutral-text">
+            {member.topics.map((topic) => (
+              <li class="flex items-start gap-2">
+                <Icon name="check" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" />
+                <span>{topic}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
+      )}
     </div>
   </div>
 
-  <div class="p-6 pt-0">
+  <div class="p-6 pt-0 space-y-3 mt-auto">
+    {member.schedule && (
+      <div class="flex items-start gap-2 text-xs text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+        <Icon name="clock" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" />
+        <div>
+          <span class="font-semibold text-neutral-title block text-[11px]">Horarios de atención</span>
+          <span class="text-xs">{member.schedule}</span>
+        </div>
+      </div>
+    )}
+
     <a 
-      href={siteData.contact.whatsappUrl}
+      href={customWhatsappUrl}
       target="_blank"
-      class="w-full py-2.5 px-4 rounded-xl text-xs font-bold text-secondary bg-primary-light hover:bg-primary/20 transition-colors flex items-center justify-center gap-2"
+      rel="noopener noreferrer"
+      class="w-full py-2.5 px-4 rounded-xl text-xs font-bold text-primary bg-primary-light hover:bg-primary/20 transition-colors flex items-center justify-center gap-2 group/btn"
+      aria-label={`Solicitar turno con ${member.name}`}
     >
       <span>Solicitar turno</span>
-      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-      </svg>
+      <Icon name="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
     </a>
   </div>
+
 </div>
