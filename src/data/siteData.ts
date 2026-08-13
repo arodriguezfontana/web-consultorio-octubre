@@ -27,7 +27,7 @@ export const siteData = {
   contact: {
     phone: "+5491131982012",
     phoneDisplay: "+54 9 11 3198-2012",
-    whatsappUrl: "https://wa.me/5491131982012?text=Hola!%20Quisiera%20consultar%20por%20un%20turno%20de%20psicología%20en%20Espacio%20Octubre.",
+    whatsappUrl: "https://wa.me/5491131982012?text=Hola!%20Quisiera%20consultar%20por%20un%20turno%20en%20Espacio%20Octubre.",
     email: "contacto@consultoriooctubre.com",
     hours: "Lun a Vie: 8 a 20 hs",
     hourswe: "Sab: 9 a 18 hs",

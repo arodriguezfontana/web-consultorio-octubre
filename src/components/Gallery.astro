@@ -4,35 +4,35 @@ import { galleryImages } from '../data/galleryData';
 const doubleImages = [...galleryImages, ...galleryImages];
 ---
 
-<section class="py-16 md:py-24 bg-neutral-bg overflow-hidden select-none">
+<section class="py-14 bg-neutral-bg overflow-hidden select-none border-b border-slate-200/80">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
     <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-neutral-title tracking-tight">
       Nuestros Consultorios
     </h2>
   </div>
 
-  <div class="relative w-full overflow-hidden py-4 group">
-    <div class="absolute top-0 bottom-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-neutral-bg to-transparent opacity-60 z-10 pointer-events-none"></div>
-    <div class="absolute top-0 bottom-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-neutral-bg to-transparent opacity-60 z-10 pointer-events-none"></div>
+  <div class="relative w-full overflow-hidden py-2 group">
+    <div class="absolute top-0 bottom-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-neutral-bg to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute top-0 bottom-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-neutral-bg to-transparent z-10 pointer-events-none"></div>
 
-    <div class="flex gap-6 w-max animate-infinite-scroll group-hover:[animation-play-state:paused]">
+    <div class="flex gap-5 sm:gap-6 w-max animate-infinite-scroll group-hover:[animation-play-state:paused]">
       {doubleImages.map((img) => (
-        <div class="w-70 sm:w-95 lg:w-105 shrink-0">
-          <div class="relative overflow-hidden bg-neutral-surface border border-slate-200/80 shadow-xs h-80 sm:h-100 group/card">
+        <div class="w-72 sm:w-88 lg:w-96 shrink-0">
+          <div class="relative overflow-hidden bg-neutral-surface rounded-4xl border border-slate-200/80 shadow-xs h-72 sm:h-96 group/card">
             <img
               src={img.src}
               alt={img.alt}
               class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500 ease-out"
               loading="lazy"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex items-end p-6">
-              <div class="text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex items-end p-5 sm:p-6">
+              <div class="text-white space-y-0.5">
                 {img.subtitle && (
-                  <span class="text-xs font-medium text-primary-light block mb-0.5">
+                  <span class="text-[11px] font-semibold text-accent uppercase tracking-wider block">
                     {img.subtitle}
                   </span>
                 )}
-                <h3 class="text-base sm:text-lg font-semibold leading-tight">
+                <h3 class="text-base sm:text-lg font-bold leading-snug">
                   {img.title}
                 </h3>
               </div>
@@ -55,6 +55,6 @@ const doubleImages = [...galleryImages, ...galleryImages];
   }
 
   .animate-infinite-scroll {
-    animation: infiniteScroll 25s linear infinite;
+    animation: infiniteScroll 30s linear infinite;
   }
 </style>

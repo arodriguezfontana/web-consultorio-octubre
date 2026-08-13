@@ -13,11 +13,11 @@ const customWhatsappUrl = `https://wa.me/${siteData.contact.phone.replace(/[^0-9
 ---
 
 <div
-  class="bg-neutral-surface rounded-2xl border border-slate-200/80 border-t-4 border-t-primary shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between group h-full"
+  class="bg-neutral-surface rounded-2xl border border-slate-200/80 border-t-4 border-t-primary shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group h-full"
 >
   <div>
     <div
-      class="relative w-full h-65 sm:h-72 bg-slate-100 overflow-hidden shrink-0"
+      class="relative w-full h-62 bg-slate-100 overflow-hidden shrink-0"
     >
       <img
         src={member.image}
@@ -54,7 +54,7 @@ const customWhatsappUrl = `https://wa.me/${siteData.contact.phone.replace(/[^0-9
         >
           {member.role}
         </span>
-        <h2 class="text-lg font-bold text-neutral-title mt-1 leading-tight">
+        <h2 class="text-lg font-bold text-neutral-title mt-1 leading-tight group-hover:text-primary transition-colors">
           {member.name}
         </h2>
       </div>
@@ -105,7 +105,7 @@ const customWhatsappUrl = `https://wa.me/${siteData.contact.phone.replace(/[^0-9
       href={customWhatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class="w-full py-2 px-3 rounded-xl text-xs font-bold text-primary bg-primary-light hover:bg-primary/20 transition-colors flex items-center justify-center gap-1.5 group/btn"
+      class="w-full py-2 px-3 rounded-xl text-xs font-bold text-primary bg-primary-light hover:bg-primary hover:text-white transition-all duration-200 flex items-center justify-center gap-1.5 group/btn"
       aria-label={`Solicitar turno con ${member.name}`}
     >
       <span>Solicitar turno</span>

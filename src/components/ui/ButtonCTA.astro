@@ -1,20 +1,23 @@
 ---
-interface Props {
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'a'> {
   href?: string;
   class?: string;
 }
 
-const { href = "/contacto", class: className = "" } = Astro.props;
+const { href = "/contacto", class: className = "", ...rest } = Astro.props;
 ---
 
 <a
   href={href}
-  class={`group relative inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide uppercase text-primary bg-white border border-slate-200/70 shadow-xs hover:border-slate-200/80 hover:text-primary hover:shadow-sm transition-all duration-300 outline-none select-none [-webkit-tap-highlight-color:transparent] ${className}`}
+  {...rest}
+  class={`group relative inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase text-primary bg-white border border-slate-200/80 shadow-xs hover:border-primary/10 hover:text-primary hover:shadow-sm active:scale-95 transition-all duration-200 outline-none select-none [-webkit-tap-highlight-color:transparent] ${className}`}
 >
-  <span class="relative flex h-2 w-2">
-    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+  <span class="relative flex h-2 w-2 shrink-0">
+    <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"></span>
     <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
   </span>
 
-  <span><slot>Solicitar Turno</slot></span>
+  <span class="truncate"><slot>Solicitar Turno</slot></span>
 </a>
